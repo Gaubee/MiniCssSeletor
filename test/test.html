@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../lib/main.js"></script>
+	</head>
+	<body>
+		<div id="a"></div>
+		<div id="b" class="c1 c2"></div>
+		<div class="c3"></div>
+		<span class="c3 c4 c5"></span>
+		<div class="c3 c4"></div>
+		<p title="heheh errrr zz-cc-dd"><b title="heheh" class="hehe"></b></p>
+		<b title="heheh errrr zz-cc-dd"></b>
+	</body>
+	<script>
+	console.log($("#a")._run());
+	console.log($("#b.c1")._run());
+	console.log($("#b.c1.c2")._run());
+	console.log($("#b.c1.c2.c3")._run());
+	console.log($(".c3")._run());
+	console.log($(".c3.c4")._run());
+	console.log($(".c3.c5")._run());
+	console.log($("div")._run());
+	console.log($("div.c4")._run());
+	console.log($("*")._run());
+	console.log($("[title=heheh]")._run());
+	console.log($("[title^=hehe]")._run());
+	console.log($("[title$=-dd]")._run());
+	console.log($("[title*='rrr ']")._run());
+	console.log($("b[title|=cc]")._run());
+	console.log($("div~.c3")._run());
+	console.log($("div+.c3")._run());
+	console.log($("body>b")._run());
+	console.log($("body b")._run());
+
+	</script>
+</html>
