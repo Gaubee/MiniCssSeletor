@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--[if IE]>
+		<script src="http://localhost/firebug-lite/build/firebug-lite.js"></script>
+		<![endif]-->
+		<script src="../lib/main.js"></script>
+		<script src="../lib/pseudo.js"></script>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	</head>
+	<body>
+		<fieldset>
+			<legend>E:enabled与E:disabled</legend>
+			<ul>
+				<li><input id="ii1" type="text" value="可用状态"></input></li>
+				<li><input id="ii2" type="text" value="可用状态"></input><input id="iix" type="text" value="可用状态"></input></li>
+				<li><input id="ii3" type="text" value="禁用状态" disabled="disabled"></input></li>
+				<li><input id="ii4" type="text" value="禁用状态" disabled="disabled"></input></li>
+				<li id="ll1"></li>
+				<li id="ll2"></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>单选</legend>
+			<ul>
+				<li><label><input type="radio" name="colour-group" value="0" /><span>蓝色</span></label></li>
+				<li><label><input type="radio" checked="checked" name="colour-group" value="1" /><span>红色</span></label></li>
+				<li><label><input type="radio" checked="checked" name="colour-group" value="2" /><span>黑色</span></label></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>多选</legend>
+			<ul>
+				<li><label><input type="checkbox" name="colour-group2" value="0" /><span>蓝色</span></label></li>
+				<li><label><input type="checkbox" checked="checked" name="colour-group2" value="1" /><span>红色</span></label></li>
+				<li><label><input type="checkbox" checked="checked" name="colour-group2" value="2" /><span>黑色</span></label></li>
+			</ul>
+		</fieldset>
+
+		<fieldset>
+			<div class="hd">
+				<a href="#panel1">前往区块1</a>
+				<a href="#panel2">前往区块2</a>
+				<a href="#panel3">前往区块3</a>
+				<a href="#panel4">前往区块4</a>
+				<a href="#panel5">前往区块5</a>
+			</div>
+			<div class="bd">
+				<div id="panel1" class="panel">
+					<h2>区块1</h2>
+				</div>
+				<div id="panel2" class="panel">
+					<h2>区块2</h2>
+				</div>
+				<div id="panel3" class="panel">
+					<h2>区块3</h2>
+				</div>
+				<div id="panel4" class="panel">
+					<h2>区块4</h2>
+				</div>
+				<div id="panel5" class="panel">
+					<h2>区块5</h2>
+				</div>
+			</div>
+		</fieldset>
+	</body>
+	<script>
+	window.onload  = function () {
+		console.log($("input:disabled")._run());
+		console.log($("input:enabled")._run());
+		console.log($("input:first-of-type")._run());
+		console.log($("input:last-of-type")._run());
+		console.log($("input:only-of-type")._run());
+		console.log($("li:empty")._run());
+		console.log($("input:checked")._run());
+		console.log($("input:not([checked=checked])")._run());
+		$(".hd")._run()[0].onclick = function () {
+			console.log($(".panel:target")._run());
+		}
+	};
+	</script>
+</html>
